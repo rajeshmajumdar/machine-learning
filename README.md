@@ -4,7 +4,7 @@ Just some random projects to get me familiar with machine learning.
 
 > [Naive Bayes](https://github.com/rajeshmajumdar/machine-learning/blob/master/naive_bayes.py)
 
-### Neural Network
+### [Neural Network](https://github.com/rajeshmajumdar/machine-learning/blob/master/neural_network.py)
 Implementing a basic neural network without using any framework like Tensorflow or pyTorch. It helps me understand the nuances and the mathematics that goes behind building a neural network. 
 
 - Modules Used
