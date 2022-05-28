@@ -12,4 +12,8 @@ Implementing a basic neural network without using any framework like Tensorflow 
 2. Matplotlib (To visualize the results)
 3. Pandas (Simply to play around with data)
 
+### [Sign Language NN](https://github.com/rajeshmajumdar/machine-learning/blob/master/sign_language_nn.py)
+Tried implementing the same neural network with some tweaks in the hidden and output layer. And also added some extra functions like saving and loading weights and biases.
+Currently, I was able to get 70% accuracy on train_data and ~65% accuracy on test_data. I think it could be better, if I add more hidden layers in between that's for later.
 
+Same modules used as before.
