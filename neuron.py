@@ -18,7 +18,7 @@ print(out) # we are getting an output of 2.3 here.
 ### LAYER OF NEURONS
 ####################
 
-# Next we wanna add 3 neurons in our input layer, each neuron takes in 4 different output
+# Next we wanna add 3 neurons in our input layer, each neuron takes in 4 different inputs 
 
 inputs = [1, 2, 3, 2.5] # neuron with 4 inputs
 
