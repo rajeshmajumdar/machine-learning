@@ -26,4 +26,6 @@ First I hardcoded each neuron to better understand the nuances of a neuron and t
 ### [Tensors](https://github.com/rajeshmajumdar/machine-learning/blob/master/tensors.py)
 In this I added some more complexity to our neuron, like handling multiple input vectors and some basic maths we all have learned in 11th-12th standard.
 
-
+### [Layers](https://github.com/rajeshmajumdar/machine-learning/blog/master/layers.py)
+In this we created a class object which take number of neuron and the input vectors as parameters and give us the layer of neuron.
+So that we don't always need to hardcode and repeat our code.
