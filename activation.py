@@ -74,29 +74,3 @@ print(f"Accuracy: {acc}")
 
 ### softmax activation function: we use this activation, mostly for classification problems, since it outputs the probability.
 
-layer_outputs = [4.8, 1.21, 2.385]
-
-# Euler's number
-E = 2.71828182846
-# for each value in a vector, calculate the exponential value
-exp_values = []
-for output in layer_outputs:
-    exp_values.append(E ** output) # ** - raise to the power
-
-#print(f"Exponentiated values: {exp_values}")
-# Now we have the exponentiated values, basically now we have non-zero values for our output, which we can use to make probabilities.
-# now to get probabilities we need to convert these values between 0 and 1
-
-norm_base = sum(exp_values) # we sum all the values
-norm_values = []
-for value in exp_values:
-    norm_values.append(value/norm_base)
-
-#print(f"Normalised exponentiated values: {norm_values}")
-
-# we can achieve the same thing using numpy and much more easily
-
-exp_values = np.exp(layer_outputs)
-norm_values = exp_values / np.sum(exp_values)
-
-print(f"Exponentiated values: {exp_values}\nNormalised exponentiated values: {norm_values}")
