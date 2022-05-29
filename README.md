@@ -17,3 +17,8 @@ Tried implementing the same neural network with some tweaks in the hidden and ou
 Currently, I was able to get 70% accuracy on train_data and ~65% accuracy on test_data. I think it could be better, if I add more hidden layers in between that's for later.
 
 Same modules used as before.
+
+### [Neuron](https://github.com/rajeshmajumdar/machine-learning/blob/master/neuron.put)
+Implementation of a basic neuron taking multiple inputs, and a layer of neurons connected to each other with 4 inputs.
+
+First I hardcoded each neuron to better understand the nuances of a neuron and the maths goes behind it, next I used loops to make it more dynamic, so we can change the number of neurons and inputs and it could handle it
