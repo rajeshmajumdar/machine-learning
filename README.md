@@ -18,7 +18,12 @@ Currently, I was able to get 70% accuracy on train_data and ~65% accuracy on tes
 
 Same modules used as before.
 
-### [Neuron](https://github.com/rajeshmajumdar/machine-learning/blob/master/neuron.put)
+### [Neuron](https://github.com/rajeshmajumdar/machine-learning/blob/master/neuron.py)
 Implementation of a basic neuron taking multiple inputs, and a layer of neurons connected to each other with 4 inputs.
 
 First I hardcoded each neuron to better understand the nuances of a neuron and the maths goes behind it, next I used loops to make it more dynamic, so we can change the number of neurons and inputs and it could handle it
+
+### [Tensors](https://github.com/rajeshmajumdar/machine-learning/blob/master/tensors.py)
+In this I added some more complexity to our neuron, like handling multiple input vectors and some basic maths we all have learned in 11th-12th standard.
+
+
