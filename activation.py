@@ -28,6 +28,7 @@ class Dense:
         # Got unnormalised probabilities
         probs = exp_values / np.sum(exp_values, axis=1, keepdims=True)
         return probs
+
     def cross_entropy_loss(self, output, targets):
         samples = len(output)
 
@@ -45,7 +46,12 @@ class Dense:
         elif len(targets.shape) == 2:
             correct_confidences = np.sum(y_pred_clipped * targets, axis=1)
         negative_log_likehood = -np.log(correct_confidences)
-        return np.mean(negative_log_likehood)
+        preds = np.argmax(output, axis=1)
+        if len(targets.shape) == 2:
+            targets = np.argmax(targets, axis=1)
+
+        acc = np.mean(preds == targets)
+        return np.mean(negative_log_likehood), acc
 
 
     def forward(self, inputs):
@@ -59,9 +65,10 @@ out1 = dense1.relu(dense1.output)
 dense2 = Dense(3, 3)
 dense2.forward(out1)
 out2 = dense2.softmax(dense2.output)
-loss = dense2.cross_entropy_loss(out2, y)
+loss, acc = dense2.cross_entropy_loss(out2, y)
 print(out2[:5])
-print(loss)
+print(f"Loss: {loss}")
+print(f"Accuracy: {acc}")
 
 # now we have the probability distribution, as we can see it's almost ~33% for each, to get the value that# network chose we can use argmax on these outputs, which will check which calsses in the output distribution has the highest confidence and returns it's index. i.e. predicted class index.
 
