@@ -33,3 +33,5 @@ So that we don't always need to hardcode and repeat our code.
 ### [Activation Functions](https://github.com/rajeshmajumdar/machine-learning/blob/master/activation.py)
 Here we get to understand why we need to use activation and why we have multiple choices and how we can choose which activation function we should use in which case.
 
+### [Loss Functions](https://github.com/rajeshmajumdar/machine-learning/blob/master/loss.py)
+In this file, I just hardcoded what cross-entropy loss function does to get the loss from the softmax output, although there are many loss functions and depending on the problem loss functions differ
