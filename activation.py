@@ -1,0 +1,75 @@
+# Now we have the output from our dense layer, next we add activation function to our output, to get
+# desired output, depending on the need we can choose different activation functions.
+# The whole purpose of using activation function is to deal with non-linear problems. Most of the problems# we encounter in daily lives and we will be trying to solve would be non-linear problems.
+
+# To understand this clearly, if we don't use any activation function, it's like we are simply taking y=x,# which on graph is simply a straight line, but if our solution depends on multiple variables, then using
+# a straight line would give us nothing, so depending on the situation we use different activation 
+# since it helps our neural network to deal with non-linearity.
+
+# A great animation to understand this better: https://nnfs.io/mvp
+
+import numpy as np
+from nnfs.datasets import spiral_data
+import nnfs
+import matplotlib.pyplot as plt
+
+nnfs.init()
+
+class Dense:
+    def __init__(self, n_inputs, n_neurons):
+        self.weights = 0.01 * np.random.randn(n_inputs, n_neurons)
+        self.biases = np.zeros((1, n_neurons))
+
+    def relu(self, output):
+        return np.maximum(0, output)
+
+    def softmax(self, output):
+        exp_values = np.exp(output - np.max(output, axis=1, keepdims=True))
+        # Got unnormalised probabilities
+        probs = exp_values / np.sum(exp_values, axis=1, keepdims=True)
+        return probs
+
+    def forward(self, inputs):
+        self.output = np.dot(inputs, self.weights) + self.biases
+
+X, y = spiral_data(samples=100, classes=3)
+
+dense1 = Dense(2, 3)
+dense1.forward(X)
+out1 = dense1.relu(dense1.output)
+
+dense2 = Dense(3, 3)
+dense2.forward(out1)
+out2 = dense2.softmax(dense2.output)
+print(out2[:5])
+
+# now we have the probability distribution, as we can see it's almost ~33% for each, to get the value that# network chose we can use argmax on these outputs, which will check which calsses in the output distribution has the highest confidence and returns it's index. i.e. predicted class index.
+
+### softmax activation function: we use this activation, mostly for classification problems, since it outputs the probability.
+
+layer_outputs = [4.8, 1.21, 2.385]
+
+# Euler's number
+E = 2.71828182846
+# for each value in a vector, calculate the exponential value
+exp_values = []
+for output in layer_outputs:
+    exp_values.append(E ** output) # ** - raise to the power
+
+#print(f"Exponentiated values: {exp_values}")
+# Now we have the exponentiated values, basically now we have non-zero values for our output, which we can use to make probabilities.
+# now to get probabilities we need to convert these values between 0 and 1
+
+norm_base = sum(exp_values) # we sum all the values
+norm_values = []
+for value in exp_values:
+    norm_values.append(value/norm_base)
+
+#print(f"Normalised exponentiated values: {norm_values}")
+
+# we can achieve the same thing using numpy and much more easily
+
+exp_values = np.exp(layer_outputs)
+norm_values = exp_values / np.sum(exp_values)
+
+print(f"Exponentiated values: {exp_values}\nNormalised exponentiated values: {norm_values}")
