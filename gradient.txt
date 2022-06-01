@@ -1,0 +1,51 @@
+# Now that we understood what a derivative is, we can understand the gradient.
+'''
+Well, the derivative we just did is the simpler for of gradient, in gradient we would have a multivarite equation as the slope
+and also we would find it using partial derivative, so we will be doing this for every inputs independently.
+
+The core concept is the same it's just that we are now doing some more complicated calculations.
+In other words, gradient is simply a vector of the size of input containing partial derivative solutions with respect to the inputs.
+
+Now let's look at partial derivative for an example:
+
+f(x, y) = x + y
+= d/dx (x + y) + d/dy (x + y)
+= (d/dx x + d/dx y) + (d/dy x + d/dy y)
+= (1 + 0) + (0 + 1)
+
+Another example:
+
+f(x, y) = 2x + 3y^2
+= d/dx (2x + 3y^2) --> eq 1
+= 2 + 0
+= 2
+
+= d/dy (2x + 3y^2)
+= 0 + 3*2y
+= 6y
+
+Till now, we have looked at some of the basic examples, to get us familiar with derivatives, but in a neural network case this function
+could be much more complicated and much more confusing to solve, so here we will use the chain rule of derivatives to make it 
+easier to derivate.
+
+Let's take an example for this
+
+h(x) = f(g(x)) = 3(2x^2)^5
+We can use chain rule here, to break down this problem
+
+Acc. to chain rule.
+
+h'(x) = f'(g(x)) * g'(x)
+
+=> f'(g(x)) = 3.5(2x^2)^4 = 15(2x^2)^4
+=> g'(x) = 4x
+
+h'(x) = 15(2x^2)^4 * 4x
+
+Similarly, we can stretch this as much as possible and calculate the derivative of any complex multivariate equations.
+'''
+
+
+
+
+

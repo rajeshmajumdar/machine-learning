@@ -57,18 +57,18 @@ class Dense:
     def forward(self, inputs):
         self.output = np.dot(inputs, self.weights) + self.biases
 
-X, y = spiral_data(samples=100, classes=3)
+# X, y = spiral_data(samples=100, classes=3)
 
-dense1 = Dense(2, 3)
-dense1.forward(X)
-out1 = dense1.relu(dense1.output)
-dense2 = Dense(3, 3)
-dense2.forward(out1)
-out2 = dense2.softmax(dense2.output)
-loss, acc = dense2.cross_entropy_loss(out2, y)
-print(out2[:5])
-print(f"Loss: {loss}")
-print(f"Accuracy: {acc}")
+# dense1 = Dense(2, 3)
+# dense1.forward(X)
+# out1 = dense1.relu(dense1.output)
+# dense2 = Dense(3, 3)
+# dense2.forward(out1)
+# out2 = dense2.softmax(dense2.output)
+# loss, acc = dense2.cross_entropy_loss(out2, y)
+# print(out2[:5])
+# print(f"Loss: {loss}")
+# print(f"Accuracy: {acc}")
 
 # now we have the probability distribution, as we can see it's almost ~33% for each, to get the value that# network chose we can use argmax on these outputs, which will check which calsses in the output distribution has the highest confidence and returns it's index. i.e. predicted class index.
 

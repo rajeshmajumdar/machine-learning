@@ -1,3 +1,5 @@
 .DS_Store
 curr_progress
 *.swp
+.vscode/
+__pycache__/
