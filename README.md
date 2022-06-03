@@ -39,5 +39,6 @@ In this file, I just hardcoded what cross-entropy loss function does to get the 
 ### [ANN](https://github.com/rajeshmajumdar/machine-learning/blob/master/nn.py)
 A full artificial feed forward neural network, tested and trained on some random data, with accuracy of ~83%. Here I coded pretty much everything needed to build a bare minimum feed forward network in python without using any 3rd party deep learning libraries except numpy and nnfs (for random dataset).
 
-====
+####
+
 Now since, I am somewhat familiar with simple ANNs, next goals for me is to get familiar with other neural network architectures like CNN, RNN, Autoencoders and so on.
